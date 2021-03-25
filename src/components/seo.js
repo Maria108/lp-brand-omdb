@@ -41,8 +41,8 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
-          httpEquiv: "Content-Security-Policy",
-          content: "upgrade-insecure-requests",
+          httpEquiv: `Content-Security-Policy`,
+          content: `upgrade-insecure-requests`,
         },
         {
           property: `og:title`,

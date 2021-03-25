@@ -1,6 +1,6 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import { Helmet } from "react-helmet"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -31,7 +31,14 @@ function ourDOMManipulation(ourJSON) {
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <Helmet>
+      <meta
+        http-equiv="Content-Security-Policy"
+        content="upgrade-insecure-requests"
+      ></meta>
+      <title>My Awesome Website</title>
+    </Helmet>
+
     <p>Please choose your movie.</p>
     <div className="well">
       <input
@@ -50,8 +57,8 @@ const IndexPage = () => (
     </div>
     <div className="well">
       <div className="text-center">
-        <h3 id="movieTitle"></h3>
-        <h4 id="movieYear"></h4>
+        <p id="movieTitle"></p>
+        <p id="movieYear"></p>
       </div>
     </div>
 
